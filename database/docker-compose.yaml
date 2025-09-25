@@ -1,0 +1,16 @@
+# Docker (н-р, Docker Desktop в Windows) должен быть запущен!
+# Запуск: docker-compose up -d
+# Остановка: docker-compose down
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
